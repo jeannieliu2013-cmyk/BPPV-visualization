@@ -1,136 +1,57 @@
-<!DOCTYPE html>
-
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Vestibular Labyrinth Model</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Epley Maneuver Simulation</title>
 
-```
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        max-width: 900px;
-        margin: 60px auto;
-        padding: 0 30px;
-        line-height: 1.6;
-    }
+    <!-- Exact Plotly major/minor version used by the original HTML -->
+    <script src="https://cdn.plot.ly/plotly-3.7.0.min.js"></script>
 
-    h1 {
-        margin-bottom: 10px;
-    }
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
 
-    .description {
-        margin-bottom: 40px;
-        font-size: 18px;
-    }
+        #plot {
+            height: 100%;
+            width: 100%;
+        }
 
-    h2 {
-        margin-bottom: 20px;
-    }
+        #controls {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            text-align: center;
+            background: rgba(255,255,255,0.85);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
 
-    .simulation-box {
-        display: block;
-        text-decoration: none;
-        color: inherit;
+        button {
+            margin: 5px;
+            padding: 8px 16px;
+        }
 
-        border: 1px solid #cccccc;
-        border-radius: 10px;
-
-        padding: 20px 25px;
-        margin-bottom: 18px;
-
-        transition: 0.2s;
-    }
-
-    .simulation-box:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    }
-
-    .simulation-title {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    .simulation-description {
-        font-size: 16px;
-        color: #555555;
-    }
-
-    .coming-soon {
-        opacity: 0.55;
-        cursor: default;
-    }
-</style>
-```
-
+        #stage-control-label {
+            margin: 10px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="plot"></div>
 
-```
-<h1>Vestibular Labyrinth Model</h1>
-
-<p class="description">
-    An interactive 3D computational model of
-    semicircular canal dynamics and otoconia movement.
-</p>
-
-<h2>Simulations</h2>
-
-<a class="simulation-box" href="BBQ_roll_simulation_2.html">
-
-    <div class="simulation-title">
-        Right Ear · Horizontal Canal · BBQ Roll Maneuver
+    <div id="controls">
+        <button id="previous">◀ Previous</button>
+        <span id="stage-control-label"></span>
+        <button id="next">Next ▶</button>
     </div>
 
-    <div class="simulation-description">
-        Interactive simulation of otoconia movement during the
-        BBQ roll maneuver.
-    </div>
-
-</a>
-
-
-<div class="simulation-box coming-soon">
-
-    <div class="simulation-title">
-        Right Ear · Horizontal Canal · Roll Test
-    </div>
-
-    <div class="simulation-description">
-        Coming soon.
-    </div>
-
-</div>
-
-
-<div class="simulation-box coming-soon">
-
-    <div class="simulation-title">
-        Left Ear · Horizontal Canal · BBQ Roll Maneuver
-    </div>
-
-    <div class="simulation-description">
-        Coming soon.
-    </div>
-
-</div>
-
-
-<div class="simulation-box coming-soon">
-
-    <div class="simulation-title">
-        Left Ear · Horizontal Canal · Roll Test
-    </div>
-
-    <div class="simulation-description">
-        Coming soon.
-    </div>
-
-</div>
-```
-
+    <script src="js/simulator.js"></script>
 </body>
 </html>
-
